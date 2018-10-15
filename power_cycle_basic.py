@@ -11,9 +11,10 @@ x505 = bus.send_periodic(keep_alive, 0.64)
 x2c3 = bus.send_periodic(driver_present, 0.02)
 
 with Airbender() as dut:
+    loopAmount = input('Loop: ')
     test_count = 0
-    while True:
-        log_folder = 'logs_iteration_' + str(test_count)
+    while test_count < loopAmount:
+        log_folder = 'logs_iteration_' + str(test_count + 1)
         os.mkdir(log_folder)
 
         # Reset airbender
