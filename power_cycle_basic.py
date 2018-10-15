@@ -1,3 +1,4 @@
+import can
 from airbender import Airbender
 from can import interface, Message
 from os import mkdir
@@ -15,6 +16,8 @@ with Airbender() as dut:
     test_count = 0
     while test_count < loopAmount:
         log_folder = 'logs_iteration_' + str(test_count + 1)
+        if os.path.exists(log_folder):
+            shutil.rmtree(log_folder)
         os.mkdir(log_folder)
 
         # Reset airbender
