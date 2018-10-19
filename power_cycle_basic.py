@@ -1,4 +1,5 @@
 import can
+import shutil
 from airbender import Airbender
 from can import interface, Message
 from os import mkdir
